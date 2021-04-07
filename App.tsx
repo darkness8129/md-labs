@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {enableScreens} from 'react-native-screens';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -25,6 +26,7 @@ const SecondItem = () => {
 
 export const App = () => {
   const Tab = createBottomTabNavigator();
+  enableScreens();
 
   return (
     <SafeAreaProvider>

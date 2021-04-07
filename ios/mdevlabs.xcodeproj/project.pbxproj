@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* mdlabsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* mdlabsTests.m */; };
+		00E356F31AD99517003FC87E /* mdevlabsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* mdevlabsTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		5DAB9B796FFD2D6FA52648EC /* libPods-mdlabs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6781DF01F82B27A4F95C11 /* libPods-mdlabs.a */; };
-		7336AD15260FC204005069D5 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 7336AD14260FC204005069D5 /* main.jsbundle */; };
-		7D05B680AEA15A8BDAC208E7 /* libPods-mdlabs-mdlabsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A76FF4FFEC6B271C098ADFA /* libPods-mdlabs-mdlabsTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		1B6A7B5E82CB5863843A7C06 /* libPods-mdevlabs-mdevlabsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE62C654C04D6F08DAB0C40B /* libPods-mdevlabs-mdevlabsTests.a */; };
+		B5E722DD0D4368009AD9FD8B /* libPods-mdevlabs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218A9335425C4A48A07CA9F6 /* libPods-mdevlabs.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,45 +21,44 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = mdlabs;
+			remoteInfo = mdevlabs;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* mdlabsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mdlabsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* mdevlabsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mdevlabsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* mdlabsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mdlabsTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* mdlabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mdlabs.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = mdlabs/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = mdlabs/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = mdlabs/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = mdlabs/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = mdlabs/main.m; sourceTree = "<group>"; };
-		1A76FF4FFEC6B271C098ADFA /* libPods-mdlabs-mdlabsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mdlabs-mdlabsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D6781DF01F82B27A4F95C11 /* libPods-mdlabs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mdlabs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7336AC2A260FBEB3005069D5 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
-		7336AC2B260FBEB3005069D5 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
-		7336AC2C260FBEB3005069D5 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
-		7336AC2D260FBEB3005069D5 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
-		7336AC2E260FBEB3005069D5 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
-		7336AC2F260FBEB3005069D5 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
-		7336AC30260FBEB3005069D5 /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
-		7336AC31260FBEB3005069D5 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
-		7336AC32260FBEB3005069D5 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
-		7336AC33260FBEB3005069D5 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
-		7336AC34260FBEB3005069D5 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
-		7336AC35260FBEB3005069D5 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
-		7336AC36260FBEB3005069D5 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
-		7336AC37260FBEB3005069D5 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
-		7336AC38260FBEB3005069D5 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
-		7336AC39260FBEB3005069D5 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
-		7336AD14260FC204005069D5 /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = mdlabs/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A4F5A9739CC627D1539D9C75 /* Pods-mdlabs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdlabs.release.xcconfig"; path = "Target Support Files/Pods-mdlabs/Pods-mdlabs.release.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* mdevlabsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mdevlabsTests.m; sourceTree = "<group>"; };
+		07EEF94338F5717E81D2F66C /* Pods-mdevlabs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdevlabs.debug.xcconfig"; path = "Target Support Files/Pods-mdevlabs/Pods-mdevlabs.debug.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* mdevlabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mdevlabs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = mdevlabs/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = mdevlabs/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = mdevlabs/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = mdevlabs/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = mdevlabs/main.m; sourceTree = "<group>"; };
+		218A9335425C4A48A07CA9F6 /* libPods-mdevlabs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mdevlabs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73AF3858261E4A4200F0039E /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
+		73AF3859261E4A4200F0039E /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
+		73AF385A261E4A4200F0039E /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
+		73AF385B261E4A4200F0039E /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
+		73AF385C261E4A4200F0039E /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
+		73AF385D261E4A4200F0039E /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
+		73AF385E261E4A4200F0039E /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
+		73AF385F261E4A4200F0039E /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
+		73AF3860261E4A4200F0039E /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
+		73AF3861261E4A4200F0039E /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
+		73AF3862261E4A4200F0039E /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
+		73AF3863261E4A4200F0039E /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		73AF3864261E4A4200F0039E /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
+		73AF3865261E4A4200F0039E /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
+		73AF3866261E4A4200F0039E /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
+		73AF3867261E4A4200F0039E /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		8018A6F6841165B21A1709E8 /* Pods-mdevlabs-mdevlabsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdevlabs-mdevlabsTests.debug.xcconfig"; path = "Target Support Files/Pods-mdevlabs-mdevlabsTests/Pods-mdevlabs-mdevlabsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = mdevlabs/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DBAFA1A86834232BEAC26E70 /* Pods-mdevlabs-mdevlabsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdevlabs-mdevlabsTests.release.xcconfig"; path = "Target Support Files/Pods-mdevlabs-mdevlabsTests/Pods-mdevlabs-mdevlabsTests.release.xcconfig"; sourceTree = "<group>"; };
+		E8A8570A3B1A7123553031A1 /* Pods-mdevlabs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdevlabs.release.xcconfig"; path = "Target Support Files/Pods-mdevlabs/Pods-mdevlabs.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F40CBA080833502D94C4BF70 /* Pods-mdlabs-mdlabsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdlabs-mdlabsTests.debug.xcconfig"; path = "Target Support Files/Pods-mdlabs-mdlabsTests/Pods-mdlabs-mdlabsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F73BCA9FD8F87BB2D815E722 /* Pods-mdlabs-mdlabsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdlabs-mdlabsTests.release.xcconfig"; path = "Target Support Files/Pods-mdlabs-mdlabsTests/Pods-mdlabs-mdlabsTests.release.xcconfig"; sourceTree = "<group>"; };
-		FE0D61B2F2D1A377EF21755C /* Pods-mdlabs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdlabs.debug.xcconfig"; path = "Target Support Files/Pods-mdlabs/Pods-mdlabs.debug.xcconfig"; sourceTree = "<group>"; };
+		EE62C654C04D6F08DAB0C40B /* libPods-mdevlabs-mdevlabsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mdevlabs-mdevlabsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D05B680AEA15A8BDAC208E7 /* libPods-mdlabs-mdlabsTests.a in Frameworks */,
+				1B6A7B5E82CB5863843A7C06 /* libPods-mdevlabs-mdevlabsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,20 +74,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DAB9B796FFD2D6FA52648EC /* libPods-mdlabs.a in Frameworks */,
+				B5E722DD0D4368009AD9FD8B /* libPods-mdevlabs.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* mdlabsTests */ = {
+		00E356EF1AD99517003FC87E /* mdevlabsTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* mdlabsTests.m */,
+				00E356F21AD99517003FC87E /* mdevlabsTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = mdlabsTests;
+			path = mdevlabsTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -101,10 +98,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* mdlabs */ = {
+		13B07FAE1A68108700A75B9A /* mdevlabs */ = {
 			isa = PBXGroup;
 			children = (
-				7336AC29260FBEB3005069D5 /* Fonts */,
+				73AF3857261E4A4200F0039E /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -112,40 +109,41 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = mdlabs;
+			name = mdevlabs;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				2D6781DF01F82B27A4F95C11 /* libPods-mdlabs.a */,
-				1A76FF4FFEC6B271C098ADFA /* libPods-mdlabs-mdlabsTests.a */,
+				218A9335425C4A48A07CA9F6 /* libPods-mdevlabs.a */,
+				EE62C654C04D6F08DAB0C40B /* libPods-mdevlabs-mdevlabsTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7336AC29260FBEB3005069D5 /* Fonts */ = {
+		73AF3857261E4A4200F0039E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				7336AC2A260FBEB3005069D5 /* Fontisto.ttf */,
-				7336AC2B260FBEB3005069D5 /* Octicons.ttf */,
-				7336AC2C260FBEB3005069D5 /* Feather.ttf */,
-				7336AC2D260FBEB3005069D5 /* Entypo.ttf */,
-				7336AC2E260FBEB3005069D5 /* FontAwesome5_Brands.ttf */,
-				7336AC2F260FBEB3005069D5 /* MaterialCommunityIcons.ttf */,
-				7336AC30260FBEB3005069D5 /* AntDesign.ttf */,
-				7336AC31260FBEB3005069D5 /* Foundation.ttf */,
-				7336AC32260FBEB3005069D5 /* Ionicons.ttf */,
-				7336AC33260FBEB3005069D5 /* FontAwesome5_Solid.ttf */,
-				7336AC34260FBEB3005069D5 /* FontAwesome5_Regular.ttf */,
-				7336AC35260FBEB3005069D5 /* FontAwesome.ttf */,
-				7336AC36260FBEB3005069D5 /* Zocial.ttf */,
-				7336AC37260FBEB3005069D5 /* EvilIcons.ttf */,
-				7336AC38260FBEB3005069D5 /* SimpleLineIcons.ttf */,
-				7336AC39260FBEB3005069D5 /* MaterialIcons.ttf */,
+				73AF3858261E4A4200F0039E /* Fontisto.ttf */,
+				73AF3859261E4A4200F0039E /* Octicons.ttf */,
+				73AF385A261E4A4200F0039E /* Feather.ttf */,
+				73AF385B261E4A4200F0039E /* Entypo.ttf */,
+				73AF385C261E4A4200F0039E /* FontAwesome5_Brands.ttf */,
+				73AF385D261E4A4200F0039E /* MaterialCommunityIcons.ttf */,
+				73AF385E261E4A4200F0039E /* AntDesign.ttf */,
+				73AF385F261E4A4200F0039E /* Foundation.ttf */,
+				73AF3860261E4A4200F0039E /* Ionicons.ttf */,
+				73AF3861261E4A4200F0039E /* FontAwesome5_Solid.ttf */,
+				73AF3862261E4A4200F0039E /* FontAwesome5_Regular.ttf */,
+				73AF3863261E4A4200F0039E /* FontAwesome.ttf */,
+				73AF3864261E4A4200F0039E /* Zocial.ttf */,
+				73AF3865261E4A4200F0039E /* EvilIcons.ttf */,
+				73AF3866261E4A4200F0039E /* SimpleLineIcons.ttf */,
+				73AF3867261E4A4200F0039E /* MaterialIcons.ttf */,
 			);
-			path = Fonts;
+			name = Fonts;
+			path = "../node_modules/react-native-vector-icons/Fonts";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -158,13 +156,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				7336AD14260FC204005069D5 /* main.jsbundle */,
-				13B07FAE1A68108700A75B9A /* mdlabs */,
+				13B07FAE1A68108700A75B9A /* mdevlabs */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* mdlabsTests */,
+				00E356EF1AD99517003FC87E /* mdevlabsTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				A6379A65A78C59E7C7EB4562 /* Pods */,
+				E026B202B5C2748BE7D088A1 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -174,19 +171,19 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* mdlabs.app */,
-				00E356EE1AD99517003FC87E /* mdlabsTests.xctest */,
+				13B07F961A680F5B00A75B9A /* mdevlabs.app */,
+				00E356EE1AD99517003FC87E /* mdevlabsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A6379A65A78C59E7C7EB4562 /* Pods */ = {
+		E026B202B5C2748BE7D088A1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FE0D61B2F2D1A377EF21755C /* Pods-mdlabs.debug.xcconfig */,
-				A4F5A9739CC627D1539D9C75 /* Pods-mdlabs.release.xcconfig */,
-				F40CBA080833502D94C4BF70 /* Pods-mdlabs-mdlabsTests.debug.xcconfig */,
-				F73BCA9FD8F87BB2D815E722 /* Pods-mdlabs-mdlabsTests.release.xcconfig */,
+				07EEF94338F5717E81D2F66C /* Pods-mdevlabs.debug.xcconfig */,
+				E8A8570A3B1A7123553031A1 /* Pods-mdevlabs.release.xcconfig */,
+				8018A6F6841165B21A1709E8 /* Pods-mdevlabs-mdevlabsTests.debug.xcconfig */,
+				DBAFA1A86834232BEAC26E70 /* Pods-mdevlabs-mdevlabsTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -194,47 +191,47 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* mdlabsTests */ = {
+		00E356ED1AD99517003FC87E /* mdevlabsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "mdlabsTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "mdevlabsTests" */;
 			buildPhases = (
-				B1B319E42551232818D07862 /* [CP] Check Pods Manifest.lock */,
+				7F643B5B172F5375841EB64D /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				25FD710C775DE85A91C87DA6 /* [CP] Embed Pods Frameworks */,
-				FB059FB53237D28D4B10EAA9 /* [CP] Copy Pods Resources */,
+				17570A10D1F4D8552A657794 /* [CP] Embed Pods Frameworks */,
+				553127C435D907A4926DCC38 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = mdlabsTests;
-			productName = mdlabsTests;
-			productReference = 00E356EE1AD99517003FC87E /* mdlabsTests.xctest */;
+			name = mdevlabsTests;
+			productName = mdevlabsTests;
+			productReference = 00E356EE1AD99517003FC87E /* mdevlabsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* mdlabs */ = {
+		13B07F861A680F5B00A75B9A /* mdevlabs */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "mdlabs" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "mdevlabs" */;
 			buildPhases = (
-				AC7844E2E82F1DFCC691153B /* [CP] Check Pods Manifest.lock */,
+				934C07C4ED698E3F8451A27D /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				7F3978C8C21AEB42B6493346 /* [CP] Embed Pods Frameworks */,
-				E93E0564301F02D883D44B5F /* [CP] Copy Pods Resources */,
+				AA1440F76EE66430CE9E1800 /* [CP] Embed Pods Frameworks */,
+				CD97EDE54EF2DEF184E2FF99 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = mdlabs;
-			productName = mdlabs;
-			productReference = 13B07F961A680F5B00A75B9A /* mdlabs.app */;
+			name = mdevlabs;
+			productName = mdevlabs;
+			productReference = 13B07F961A680F5B00A75B9A /* mdevlabs.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -254,7 +251,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "mdlabs" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "mdevlabs" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -267,8 +264,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* mdlabs */,
-				00E356ED1AD99517003FC87E /* mdlabsTests */,
+				13B07F861A680F5B00A75B9A /* mdevlabs */,
+				00E356ED1AD99517003FC87E /* mdevlabsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -285,8 +282,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7336AD15260FC204005069D5 /* main.jsbundle in Resources */,
-				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,41 +303,41 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		25FD710C775DE85A91C87DA6 /* [CP] Embed Pods Frameworks */ = {
+		17570A10D1F4D8552A657794 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mdlabs-mdlabsTests/Pods-mdlabs-mdlabsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-mdevlabs-mdevlabsTests/Pods-mdevlabs-mdevlabsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mdlabs-mdlabsTests/Pods-mdlabs-mdlabsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-mdevlabs-mdevlabsTests/Pods-mdevlabs-mdevlabsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mdlabs-mdlabsTests/Pods-mdlabs-mdlabsTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mdevlabs-mdevlabsTests/Pods-mdevlabs-mdevlabsTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7F3978C8C21AEB42B6493346 /* [CP] Embed Pods Frameworks */ = {
+		553127C435D907A4926DCC38 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mdlabs/Pods-mdlabs-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-mdevlabs-mdevlabsTests/Pods-mdevlabs-mdevlabsTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mdlabs/Pods-mdlabs-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-mdevlabs-mdevlabsTests/Pods-mdevlabs-mdevlabsTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mdlabs/Pods-mdlabs-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mdevlabs-mdevlabsTests/Pods-mdevlabs-mdevlabsTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AC7844E2E82F1DFCC691153B /* [CP] Check Pods Manifest.lock */ = {
+		7F643B5B172F5375841EB64D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -357,14 +352,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-mdlabs-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-mdevlabs-mdevlabsTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B1B319E42551232818D07862 /* [CP] Check Pods Manifest.lock */ = {
+		934C07C4ED698E3F8451A27D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -379,45 +374,45 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-mdlabs-mdlabsTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-mdevlabs-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E93E0564301F02D883D44B5F /* [CP] Copy Pods Resources */ = {
+		AA1440F76EE66430CE9E1800 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mdlabs/Pods-mdlabs-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-mdevlabs/Pods-mdevlabs-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mdlabs/Pods-mdlabs-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-mdevlabs/Pods-mdevlabs-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mdlabs/Pods-mdlabs-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mdevlabs/Pods-mdevlabs-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FB059FB53237D28D4B10EAA9 /* [CP] Copy Pods Resources */ = {
+		CD97EDE54EF2DEF184E2FF99 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mdlabs-mdlabsTests/Pods-mdlabs-mdlabsTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-mdevlabs/Pods-mdevlabs-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mdlabs-mdlabsTests/Pods-mdlabs-mdlabsTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-mdevlabs/Pods-mdevlabs-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mdlabs-mdlabsTests/Pods-mdlabs-mdlabsTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mdevlabs/Pods-mdevlabs-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -446,7 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* mdlabsTests.m in Sources */,
+				00E356F31AD99517003FC87E /* mdevlabsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,7 +459,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* mdlabs */;
+			target = 13B07F861A680F5B00A75B9A /* mdevlabs */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -472,15 +467,15 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F40CBA080833502D94C4BF70 /* Pods-mdlabs-mdlabsTests.debug.xcconfig */;
+			baseConfigurationReference = 8018A6F6841165B21A1709E8 /* Pods-mdevlabs-mdevlabsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = mdlabsTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				INFOPLIST_FILE = mdevlabsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -493,18 +488,18 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mdlabs.app/mdlabs";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mdevlabs.app/mdevlabs";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F73BCA9FD8F87BB2D815E722 /* Pods-mdlabs-mdlabsTests.release.xcconfig */;
+			baseConfigurationReference = DBAFA1A86834232BEAC26E70 /* Pods-mdevlabs-mdevlabsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = mdlabsTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				INFOPLIST_FILE = mdevlabsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -517,19 +512,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mdlabs.app/mdlabs";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mdevlabs.app/mdevlabs";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE0D61B2F2D1A377EF21755C /* Pods-mdlabs.debug.xcconfig */;
+			baseConfigurationReference = 07EEF94338F5717E81D2F66C /* Pods-mdevlabs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = mdlabs/Info.plist;
+				INFOPLIST_FILE = mdevlabs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -540,7 +535,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = mdlabs;
+				PRODUCT_NAME = mdevlabs;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -549,12 +544,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4F5A9739CC627D1539D9C75 /* Pods-mdlabs.release.xcconfig */;
+			baseConfigurationReference = E8A8570A3B1A7123553031A1 /* Pods-mdevlabs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = mdlabs/Info.plist;
+				INFOPLIST_FILE = mdevlabs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -565,7 +560,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = mdlabs;
+				PRODUCT_NAME = mdevlabs;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -604,7 +599,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -620,7 +615,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -669,7 +664,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -678,7 +673,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -697,7 +692,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "mdlabsTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "mdevlabsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -706,7 +701,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "mdlabs" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "mdevlabs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -715,7 +710,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "mdlabs" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "mdevlabs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
