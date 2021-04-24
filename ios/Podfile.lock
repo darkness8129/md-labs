@@ -325,6 +325,8 @@ PODS:
     - Charts (= 3.3.0)
     - React
     - SwiftyJSON (= 5.0)
+  - RNGestureHandler (1.10.3):
+    - React-Core
   - RNScreens (3.1.0):
     - React-Core
   - RNVectorIcons (8.1.0):
@@ -385,6 +387,7 @@ DEPENDENCIES:
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNCharts (from `../node_modules/react-native-charts-wrapper`)
+  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -465,6 +468,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNCharts:
     :path: "../node_modules/react-native-charts-wrapper"
+  RNGestureHandler:
+    :path: "../node_modules/react-native-gesture-handler"
   RNScreens:
     :path: "../node_modules/react-native-screens"
   RNVectorIcons:
@@ -514,6 +519,7 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: cad74a1eaa53ee6e7a3620231939d8fe2c6afcf0
   ReactCommon: cfe2b7fd20e0dbd2d1185cd7d8f99633fbc5ff05
   RNCharts: d364ca2085e24edb9ee0390d3fb7209257daa44c
+  RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNScreens: 3ba2198ca3179f77f6158425fc31ba3c90a0d49f
   RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7

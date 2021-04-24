@@ -1,10 +1,12 @@
 import React, {FC, useEffect, useState} from 'react';
-import {ActivityIndicator, processColor, View} from 'react-native';
+import {ActivityIndicator, processColor, View, Dimensions} from 'react-native';
 import {LineChart} from 'react-native-charts-wrapper';
 const nextFrame = require('next-frame');
 
 import {styles} from './styles';
 import {TabBar} from '../../components';
+import {useOrientation} from '../../hooks';
+import {Orientation} from '../../types';
 
 interface Point {
   x: number;
@@ -14,6 +16,8 @@ interface Point {
 export const ChartScreen: FC = () => {
   const [generating, setGenerating] = useState<boolean>(true);
   const [data, setData] = useState<Point[]>([]);
+
+  const orientation = useOrientation();
 
   useEffect(() => {
     const generateData = async (): Promise<void> => {
@@ -44,6 +48,9 @@ export const ChartScreen: FC = () => {
     generateData();
   }, []);
 
+  const windowWidth = Dimensions.get('window').width;
+  const windowHeight = Dimensions.get('window').height;
+
   return (
     <View style={styles.container}>
       <TabBar />
@@ -51,7 +58,16 @@ export const ChartScreen: FC = () => {
         <ActivityIndicator />
       ) : (
         <LineChart
-          style={styles.chart}
+          style={{
+            width:
+              orientation === Orientation.Portrait
+                ? windowWidth - 20
+                : windowHeight - 120,
+            height:
+              orientation === Orientation.Portrait
+                ? windowWidth - 20
+                : windowHeight - 120,
+          }}
           data={{
             dataSets: [
               {

@@ -6,9 +6,4 @@ export const styles = {
     align-items: center;
     justify-content: center;
   `,
-
-  chart: css`
-    width: 300px;
-    height: 300px;
-  `,
 };

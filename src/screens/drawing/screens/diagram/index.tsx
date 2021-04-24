@@ -1,35 +1,33 @@
 import React, {FC} from 'react';
-import {processColor, Text, View} from 'react-native';
+import {processColor, View, Dimensions} from 'react-native';
 import {PieChart} from 'react-native-charts-wrapper';
 
 import {styles} from './styles';
 import {TabBar} from '../../components';
+import {useOrientation} from '../../hooks';
+import {Orientation} from '../../types';
+import {data} from './constants';
 
 export const DiagramScreen: FC = () => {
-  const data = [
-    {
-      percent: 0.05,
-      color: 'brown',
-    },
-    {
-      percent: 0.05,
-      color: 'cyan',
-    },
-    {
-      percent: 0.1,
-      color: 'orange',
-    },
-    {
-      percent: 0.8,
-      color: 'blue',
-    },
-  ];
+  const orientation = useOrientation();
+
+  const windowWidth = Dimensions.get('window').width;
+  const windowHeight = Dimensions.get('window').height;
 
   return (
     <View style={styles.container}>
       <TabBar />
       <PieChart
-        style={styles.diagram}
+        style={{
+          width:
+            orientation === Orientation.Portrait
+              ? windowWidth - 20
+              : windowHeight - 120,
+          height:
+            orientation === Orientation.Portrait
+              ? windowWidth - 20
+              : windowHeight - 120,
+        }}
         data={{
           dataSets: [
             {
