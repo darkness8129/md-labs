@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -6,22 +6,14 @@ import {enableScreens} from 'react-native-screens';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const GeneralScreen = () => {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Юхимчук Ярослав</Text>
-      <Text>Група ІВ-81</Text>
-      <Text>ЗК ІВ-8129</Text>
-    </View>
-  );
+import {GeneralScreen, Drawing} from './screens';
+
+const Diagram: FC = () => {
+  return <Text>Drawing</Text>;
 };
 
-const SecondItem = () => {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Item 2</Text>
-    </View>
-  );
+const Graphic: FC = () => {
+  return <Text>Graphic</Text>;
 };
 
 export const App = () => {
@@ -33,10 +25,10 @@ export const App = () => {
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={({route}) => ({
-            tabBarIcon: ({focused, color, size}) => {
+            tabBarIcon: ({color, size}) => {
               return (
                 <Icon
-                  name={route.name === 'General' ? 'home' : 'cog'}
+                  name={route.name === 'General' ? 'home' : 'pencil'}
                   size={size}
                   color={color}
                 />
@@ -48,7 +40,7 @@ export const App = () => {
             inactiveTintColor: 'gray',
           }}>
           <Tab.Screen name="General" component={GeneralScreen} />
-          <Tab.Screen name="Item2" component={SecondItem} />
+          <Tab.Screen name="Drawing" component={Drawing} />
         </Tab.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
