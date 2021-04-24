@@ -1,2 +1,2 @@
 export {GeneralScreen} from './general';
-export {Drawing} from './drawing';
+export {DrawingScreen} from './drawing';

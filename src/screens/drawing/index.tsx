@@ -1,15 +1,16 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+
 import React, {FC} from 'react';
 
-import {Chart, Diagram} from './screens';
+import {ChartScreen, DiagramScreen} from './screens';
 
-export const Drawing: FC = () => {
+export const DrawingScreen: FC = () => {
   const Tab = createBottomTabNavigator();
 
   return (
     <Tab.Navigator screenOptions={{tabBarVisible: false}}>
-      <Tab.Screen name="Chart" component={Chart} />
-      <Tab.Screen name="Diagram" component={Diagram} />
+      <Tab.Screen name="ChartScreen" component={ChartScreen} />
+      <Tab.Screen name="DiagramScreen" component={DiagramScreen} />
     </Tab.Navigator>
   );
 };

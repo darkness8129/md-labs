@@ -12,6 +12,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1B6A7B5E82CB5863843A7C06 /* libPods-mdevlabs-mdevlabsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE62C654C04D6F08DAB0C40B /* libPods-mdevlabs-mdevlabsTests.a */; };
+		730F60AC2634569600EC6352 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730F60AB2634569600EC6352 /* File.swift */; };
 		B5E722DD0D4368009AD9FD8B /* libPods-mdevlabs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218A9335425C4A48A07CA9F6 /* libPods-mdevlabs.a */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,8 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = mdevlabs/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = mdevlabs/main.m; sourceTree = "<group>"; };
 		218A9335425C4A48A07CA9F6 /* libPods-mdevlabs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mdevlabs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		730F60AA2634569600EC6352 /* mdevlabs-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mdevlabs-Bridging-Header.h"; sourceTree = "<group>"; };
+		730F60AB2634569600EC6352 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		73AF3858261E4A4200F0039E /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
 		73AF3859261E4A4200F0039E /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
 		73AF385A261E4A4200F0039E /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
@@ -156,12 +159,14 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				730F60AB2634569600EC6352 /* File.swift */,
 				13B07FAE1A68108700A75B9A /* mdevlabs */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* mdevlabsTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				E026B202B5C2748BE7D088A1 /* Pods */,
+				730F60AA2634569600EC6352 /* mdevlabs-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -247,7 +252,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -450,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				730F60AC2634569600EC6352 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,6 +475,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8018A6F6841165B21A1709E8 /* Pods-mdevlabs-mdevlabsTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -496,6 +503,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBAFA1A86834232BEAC26E70 /* Pods-mdevlabs-mdevlabsTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = mdevlabsTests/Info.plist;
@@ -536,6 +544,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = mdevlabs;
+				SWIFT_OBJC_BRIDGING_HEADER = "mdevlabs-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -561,6 +570,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = mdevlabs;
+				SWIFT_OBJC_BRIDGING_HEADER = "mdevlabs-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

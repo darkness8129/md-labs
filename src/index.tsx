@@ -6,7 +6,7 @@ import {enableScreens} from 'react-native-screens';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import {GeneralScreen, Drawing} from './screens';
+import {GeneralScreen, DrawingScreen} from './screens';
 
 const Diagram: FC = () => {
   return <Text>Drawing</Text>;
@@ -40,7 +40,7 @@ export const App = () => {
             inactiveTintColor: 'gray',
           }}>
           <Tab.Screen name="General" component={GeneralScreen} />
-          <Tab.Screen name="Drawing" component={Drawing} />
+          <Tab.Screen name="Drawing" component={DrawingScreen} />
         </Tab.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

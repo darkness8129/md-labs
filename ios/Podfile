@@ -12,6 +12,8 @@ target 'mdevlabs' do
     :hermes_enabled => false
   )
 
+  pod 'RNCharts', :path => '../node_modules/react-native-charts-wrapper'
+
   target 'mdevlabsTests' do
     inherit! :complete
     # Pods for testing

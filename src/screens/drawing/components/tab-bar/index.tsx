@@ -14,16 +14,16 @@ export const TabBar: FC = () => {
         <TouchableOpacity
           style={[
             styles.button.base,
-            route.name === 'Chart' && styles.button.active,
+            route.name === 'ChartScreen' && styles.button.active,
           ]}
           activeOpacity={0.8}
           onPress={() => {
-            navigation.navigate('Chart');
+            navigation.navigate('ChartScreen');
           }}>
           <Text
             style={[
               styles.text.base,
-              route.name === 'Chart' && styles.text.active,
+              route.name === 'ChartScreen' && styles.text.active,
             ]}>
             Графік
           </Text>
@@ -32,14 +32,14 @@ export const TabBar: FC = () => {
         <TouchableOpacity
           style={[
             styles.button.base,
-            route.name === 'Diagram' && styles.button.active,
+            route.name === 'DiagramScreen' && styles.button.active,
           ]}
           activeOpacity={0.8}
-          onPress={() => navigation.navigate('Diagram')}>
+          onPress={() => navigation.navigate('DiagramScreen')}>
           <Text
             style={[
               styles.text.base,
-              route.name === 'Diagram' && styles.text.active,
+              route.name === 'DiagramScreen' && styles.text.active,
             ]}>
             Діаграма
           </Text>

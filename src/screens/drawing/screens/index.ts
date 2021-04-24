@@ -1,2 +1,2 @@
-export {Chart} from './chart';
-export {Diagram} from './diagram';
+export {ChartScreen} from './chart';
+export {DiagramScreen} from './diagram';
