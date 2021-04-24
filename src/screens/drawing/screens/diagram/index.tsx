@@ -34,9 +34,12 @@ export const DiagramScreen: FC = () => {
           dataSets: [
             {
               label: '',
-              values: data.map(item => ({value: item.percent})),
+              values: data.map(item => ({
+                value: item.percent,
+              })),
               config: {
                 colors: data.map(item => processColor(item.color)),
+                drawValues: false,
               },
             },
           ],

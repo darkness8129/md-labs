@@ -1,6 +1,7 @@
 import React, {FC, useEffect, useState} from 'react';
 import {ActivityIndicator, processColor, View} from 'react-native';
 import {LineChart} from 'react-native-charts-wrapper';
+const nextFrame = require('next-frame');
 
 import {styles} from './styles';
 import {TabBar} from '../../components';
@@ -15,11 +16,13 @@ export const ChartScreen: FC = () => {
   const [data, setData] = useState<Point[]>([]);
 
   useEffect(() => {
-    const generateData = (): void => {
+    const generateData = async (): Promise<void> => {
+      await nextFrame(); // stop to the next cycle of rendering
+
       // array of points
       let data: Point[] = [];
 
-      // pi with 3 digits
+      // pi with 3 digits after .
       const PI: number = Number(Math.PI.toFixed(3));
 
       // initial value of x
@@ -33,6 +36,7 @@ export const ChartScreen: FC = () => {
         x += 0.001;
       }
 
+      // stop generating
       setData(data);
       setGenerating(false);
     };
