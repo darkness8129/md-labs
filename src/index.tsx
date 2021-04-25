@@ -8,14 +8,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {GeneralScreen, DrawingScreen} from './screens';
 
-const Diagram: FC = () => {
-  return <Text>Drawing</Text>;
-};
-
-const Graphic: FC = () => {
-  return <Text>Graphic</Text>;
-};
-
 export const App = () => {
   const Tab = createBottomTabNavigator();
   enableScreens();
