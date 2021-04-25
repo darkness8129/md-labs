@@ -4,8 +4,8 @@ import {PieChart} from 'react-native-charts-wrapper';
 
 import {styles} from './styles';
 import {TabBar} from '../../components';
-import {useOrientation} from '../../hooks';
-import {Orientation} from '../../types';
+import {useOrientation} from '../../../../hooks';
+import {Orientation} from '../../../../types';
 import {data} from './constants';
 
 export const DiagramScreen: FC = () => {

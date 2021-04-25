@@ -5,8 +5,8 @@ const nextFrame = require('next-frame');
 
 import {styles} from './styles';
 import {TabBar} from '../../components';
-import {useOrientation} from '../../hooks';
-import {Orientation} from '../../types';
+import {useOrientation} from '../../../../hooks';
+import {Orientation} from '../../../../types';
 
 interface Point {
   x: number;

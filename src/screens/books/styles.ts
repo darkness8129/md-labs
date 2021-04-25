@@ -6,4 +6,8 @@ export const styles = {
     align-items: center;
     justify-content: center;
   `,
+
+  noBorder: css`
+    border-bottom-width: 0;
+  `,
 };
