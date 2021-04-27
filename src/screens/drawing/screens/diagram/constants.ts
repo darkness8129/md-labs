@@ -15,4 +15,4 @@ export const data = [
     percent: 0.8,
     color: 'blue',
   },
-];
+]

@@ -1,4 +1,4 @@
-import {css} from '@emotion/native';
+import { css } from '@emotion/native'
 
 export const styles = {
   container: css`
@@ -11,4 +11,4 @@ export const styles = {
     width: 300px;
     height: 300px;
   `,
-};
+}

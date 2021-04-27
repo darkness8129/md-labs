@@ -1,4 +1,4 @@
-import {css} from '@emotion/native';
+import { css } from '@emotion/native'
 
 export const styles = {
   container: css`
@@ -37,4 +37,4 @@ export const styles = {
       font-weight: bold;
     `,
   },
-};
+}

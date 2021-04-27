@@ -1,12 +1,12 @@
-import {useNavigation, useRoute} from '@react-navigation/core';
-import React, {FC} from 'react';
-import {Text, View, TouchableOpacity} from 'react-native';
+import { useNavigation, useRoute } from '@react-navigation/core'
+import React, { FC } from 'react'
+import { Text, View, TouchableOpacity } from 'react-native'
 
-import {styles} from './styles';
+import { styles } from './styles'
 
 export const TabBar: FC = () => {
-  const navigation = useNavigation();
-  const route = useRoute();
+  const navigation = useNavigation()
+  const route = useRoute()
 
   return (
     <View style={styles.container}>
@@ -18,13 +18,12 @@ export const TabBar: FC = () => {
           ]}
           activeOpacity={0.8}
           onPress={() => {
-            navigation.navigate('ChartScreen');
-          }}>
+            navigation.navigate('ChartScreen')
+          }}
+        >
           <Text
-            style={[
-              styles.text.base,
-              route.name === 'ChartScreen' && styles.text.active,
-            ]}>
+            style={[styles.text.base, route.name === 'ChartScreen' && styles.text.active]}
+          >
             Графік
           </Text>
         </TouchableOpacity>
@@ -35,16 +34,18 @@ export const TabBar: FC = () => {
             route.name === 'DiagramScreen' && styles.button.active,
           ]}
           activeOpacity={0.8}
-          onPress={() => navigation.navigate('DiagramScreen')}>
+          onPress={() => navigation.navigate('DiagramScreen')}
+        >
           <Text
             style={[
               styles.text.base,
               route.name === 'DiagramScreen' && styles.text.active,
-            ]}>
+            ]}
+          >
             Діаграма
           </Text>
         </TouchableOpacity>
       </View>
     </View>
-  );
-};
+  )
+}

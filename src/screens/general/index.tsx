@@ -1,7 +1,7 @@
-import React, {FC} from 'react';
-import {Text, View} from 'react-native';
+import React, { FC } from 'react'
+import { Text, View } from 'react-native'
 
-import {styles} from './styles';
+import { styles } from './styles'
 
 export const GeneralScreen: FC = () => {
   return (
@@ -10,5 +10,5 @@ export const GeneralScreen: FC = () => {
       <Text>Група ІВ-81</Text>
       <Text>ЗК ІВ-8129</Text>
     </View>
-  );
-};
+  )
+}

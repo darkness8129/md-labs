@@ -1,1 +1,1 @@
-export {useOrientation} from './useOrientation';
+export { useOrientation } from './useOrientation'

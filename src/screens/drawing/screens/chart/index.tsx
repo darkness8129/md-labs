@@ -1,55 +1,56 @@
-import React, {FC, useEffect, useState} from 'react';
-import {ActivityIndicator, processColor, View, Dimensions} from 'react-native';
-import {LineChart} from 'react-native-charts-wrapper';
-const nextFrame = require('next-frame');
+import React, { FC, useEffect, useState } from 'react'
+import { ActivityIndicator, processColor, View, Dimensions } from 'react-native'
+import { LineChart } from 'react-native-charts-wrapper'
+const nextFrame = require('next-frame')
 
-import {styles} from './styles';
-import {TabBar} from '../../components';
-import {useOrientation} from '../../../../hooks';
-import {Orientation} from '../../../../types';
+import { useOrientation } from '~/hooks'
+import { Orientation } from '~/types'
+
+import { styles } from './styles'
+import { TabBar } from '../../components'
 
 interface Point {
-  x: number;
-  y: number;
+  x: number
+  y: number
 }
 
 export const ChartScreen: FC = () => {
-  const [generating, setGenerating] = useState<boolean>(true);
-  const [data, setData] = useState<Point[]>([]);
+  const [generating, setGenerating] = useState<boolean>(true)
+  const [data, setData] = useState<Point[]>([])
 
-  const orientation = useOrientation();
+  const orientation = useOrientation()
 
   useEffect(() => {
     const generateData = async (): Promise<void> => {
-      await nextFrame(); // stop to the next cycle of rendering
+      await nextFrame() // stop to the next cycle of rendering
 
       // array of points
-      let data: Point[] = [];
+      let data: Point[] = []
 
       // pi with 3 digits after .
-      const PI: number = Number(Math.PI.toFixed(3));
+      const PI: number = Number(Math.PI.toFixed(3))
 
       // initial value of x
-      let x: number = -2 * PI;
+      let x: number = -2 * PI
 
       while (x <= 2 * PI) {
         // push point to array
-        data.push({x, y: Math.sin(x)});
+        data.push({ x, y: Math.sin(x) })
 
         // increase x
-        x += 0.001;
+        x += 0.001
       }
 
       // stop generating
-      setData(data);
-      setGenerating(false);
-    };
+      setData(data)
+      setGenerating(false)
+    }
 
-    generateData();
-  }, []);
+    generateData()
+  }, [])
 
-  const windowWidth = Dimensions.get('window').width;
-  const windowHeight = Dimensions.get('window').height;
+  const windowWidth = Dimensions.get('window').width
+  const windowHeight = Dimensions.get('window').height
 
   return (
     <View style={styles.container}>
@@ -80,9 +81,9 @@ export const ChartScreen: FC = () => {
               },
             ],
           }}
-          legend={{enabled: false}}
+          legend={{ enabled: false }}
         />
       )}
     </View>
-  );
-};
+  )
+}
