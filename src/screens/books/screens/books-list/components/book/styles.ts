@@ -40,5 +40,9 @@ export const styles = {
     price: css`
       margin-bottom: 0;
     `,
+
+    highlighted: css`
+      background-color: yellow;
+    `,
   },
 }

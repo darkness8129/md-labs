@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/core'
 import React, { FC } from 'react'
 import { Text, View, ViewStyle, TouchableHighlight } from 'react-native'
 import AutoHeightImage from 'react-native-auto-height-image'
+import Highlighter from 'react-native-highlight-words'
 
 // RN do not have dynamic imports :(
 import * as book1 from '~/screens/books/assets/files/9780321856715.json'
@@ -21,9 +22,11 @@ import { styles } from './styles'
 interface BookProps {
   extendStyle: ViewStyle | null
   book: BookInterface
+
+  searchValue: string
 }
 
-export const Book: FC<BookProps> = ({ book, extendStyle }) => {
+export const Book: FC<BookProps> = ({ book, extendStyle, searchValue }) => {
   const navigation = useNavigation()
 
   const showFullInfoAboutBook = (): void => {
@@ -53,7 +56,12 @@ export const Book: FC<BookProps> = ({ book, extendStyle }) => {
         </View>
 
         <View style={styles.text.container}>
-          <Text style={[styles.text.base, styles.text.title]}>{book.title}</Text>
+          <Highlighter
+            highlightStyle={styles.text.highlighted}
+            searchWords={searchValue.split(' ')}
+            textToHighlight={book.title}
+            style={[styles.text.base, styles.text.title]}
+          />
           {!!book.subtitle && (
             <Text style={[styles.text.base, styles.text.subtitle]}>{book.subtitle}</Text>
           )}

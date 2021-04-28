@@ -45,6 +45,7 @@ export const BooksListScreen: FC = () => {
             book={book}
             key={book.isbn13}
             extendStyle={index === books.length - 1 ? styles.noBorder : null}
+            searchValue={searchValue}
           />
         ))}
 
