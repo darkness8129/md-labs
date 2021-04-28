@@ -1,65 +1,45 @@
 import React, { FC, useEffect, useState } from 'react'
-import { View } from 'react-native'
+import { View, TextInput, Text } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 
 import { BookInterface } from '~/types'
 
 import BooksList from '../../assets/files/BooksList.json'
 import { Book } from './components'
+import { transformBooks } from './utils'
 import { styles } from './styles'
 
 export const BooksListScreen: FC = () => {
   const [books, setBooks] = useState<BookInterface[]>([])
-
-  // const orientation = useOrientation()
+  const [searchValue, setSearchValue] = useState<string>('')
 
   useEffect(() => {
-    // need this because RN do not have dynamic imports :(
-    const getImage = (index: number) => {
-      switch (index) {
-        case 1:
-          return require('~/screens/books/assets/images/Image_01.png')
-        case 2:
-          return require('~/screens/books/assets/images/Image_02.png')
-        case 3:
-          return require('~/screens/books/assets/images/Image_03.png')
-        case 5:
-          return require('~/screens/books/assets/images/Image_05.png')
-        case 6:
-          return require('~/screens/books/assets/images/Image_06.png')
-        case 7:
-          return require('~/screens/books/assets/images/Image_07.png')
-        case 8:
-          return require('~/screens/books/assets/images/Image_08.png')
-        case 10:
-          return require('~/screens/books/assets/images/Image_10.png')
-        default:
-          return ''
-      }
-    }
-
-    // add image for every book
-    const books: BookInterface[] = BooksList.books.map((book, index) => {
-      return {
-        ...book,
-        image: getImage(index),
-      }
-    })
-
-    // set books to the state
-    setBooks(books)
+    // add image for every book and set to the state
+    setBooks(transformBooks(BooksList.books))
   }, [])
+
+  const onSearch = (value: string): void => {
+    setSearchValue(value)
+
+    setBooks(
+      transformBooks(BooksList.books).filter(
+        (book) => book.title.toLowerCase().indexOf(value.toLocaleLowerCase()) !== -1,
+      ),
+    )
+  }
 
   return (
     <ScrollView>
-      <View
-        style={{
-          // TODO remove this comments
-          // marginTop:
-          //   orientation === Orientation.Portrait ? getStatusBarHeight() : 0,
-          marginTop: 0,
-        }}
-      >
+      <View>
+        <View style={styles.input.container}>
+          <TextInput
+            style={styles.input.input}
+            onChangeText={(value) => onSearch(value)}
+            value={searchValue}
+            placeholder="Search..."
+          />
+        </View>
+
         {books.map((book, index) => (
           <Book
             book={book}
@@ -67,6 +47,12 @@ export const BooksListScreen: FC = () => {
             extendStyle={index === books.length - 1 ? styles.noBorder : null}
           />
         ))}
+
+        {books.length === 0 && (
+          <View style={styles.noBooks.container}>
+            <Text style={styles.noBooks.text}>No books matching your search...</Text>
+          </View>
+        )}
       </View>
     </ScrollView>
   )
