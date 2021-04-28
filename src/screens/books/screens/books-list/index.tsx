@@ -18,21 +18,21 @@ export const BooksListScreen: FC = () => {
     const getImage = (index: number) => {
       switch (index) {
         case 1:
-          return require('../../assets/images/Image_01.png')
+          return require('~/screens/books/assets/images/Image_01.png')
         case 2:
-          return require('../../assets/images/Image_02.png')
+          return require('~/screens/books/assets/images/Image_02.png')
         case 3:
-          return require('../../assets/images/Image_03.png')
+          return require('~/screens/books/assets/images/Image_03.png')
         case 5:
-          return require('../../assets/images/Image_05.png')
+          return require('~/screens/books/assets/images/Image_05.png')
         case 6:
-          return require('../../assets/images/Image_06.png')
+          return require('~/screens/books/assets/images/Image_06.png')
         case 7:
-          return require('../../assets/images/Image_07.png')
+          return require('~/screens/books/assets/images/Image_07.png')
         case 8:
-          return require('../../assets/images/Image_08.png')
+          return require('~/screens/books/assets/images/Image_08.png')
         case 10:
-          return require('../../assets/images/Image_10.png')
+          return require('~/screens/books/assets/images/Image_10.png')
         default:
           return ''
       }

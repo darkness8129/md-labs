@@ -41,7 +41,8 @@ export const Book: FC<BookProps> = ({ book, extendStyle }) => {
       book10,
     ].filter((b) => b.isbn13 === book.isbn13)[0]
 
-    if (selectedBook) navigation.navigate('BookScreen', { book: selectedBook })
+    if (selectedBook)
+      navigation.navigate('BookScreen', { book: { ...selectedBook, image: book.image } })
   }
 
   return (
