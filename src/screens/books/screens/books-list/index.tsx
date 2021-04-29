@@ -74,7 +74,7 @@ export const BooksListScreen: FC<BooksListScreenProps> = ({ navigation, route })
     setFilteredBooks((prev) => [...prev].filter((book) => book.isbn13 !== id))
   }
 
-  // show full info ebout book
+  // show full info about book
   const showFullInfoAboutBook = (book: BookInterface): void => {
     // get selected book from array of extended books
     const selectedBook: BookInterface = extendedBooks.filter(
