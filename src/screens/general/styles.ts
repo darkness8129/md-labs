@@ -5,5 +5,7 @@ export const styles = {
     flex: 1;
     align-items: center;
     justify-content: center;
+
+    background-color: white;
   `,
 }

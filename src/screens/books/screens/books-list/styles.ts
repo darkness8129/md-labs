@@ -2,18 +2,21 @@ import { css } from '@emotion/native'
 
 export const styles = {
   container: css`
-    flex: 1;
-    align-items: center;
-    justify-content: center;
+    background-color: white;
+    padding-bottom: 80px;
   `,
 
-  noBorder: css`
-    border-bottom-width: 0;
+  booksList: css`
+    height: 100%;
+
+    background-color: white;
   `,
 
   input: {
     container: css`
       align-items: center;
+
+      background-color: white;
     `,
 
     input: css`
@@ -21,7 +24,6 @@ export const styles = {
       margin: 20px 0;
       padding: 10px 20px;
 
-      /* border-width: 1px; */
       border-radius: 15px;
       background-color: lightgray;
     `,
@@ -29,6 +31,9 @@ export const styles = {
 
   noBooks: {
     container: css`
+      height: 100%;
+      margin-top: 20px;
+
       align-items: center;
     `,
 
@@ -38,4 +43,29 @@ export const styles = {
       font-size: 16px;
     `,
   },
+
+  delete: {
+    container: css`
+      height: 100%;
+
+      justify-content: center;
+      align-items: flex-end;
+
+      background-color: red;
+    `,
+
+    text: css`
+      padding: 10px 20px;
+
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+    `,
+  },
+
+  separator: css`
+    height: 1px;
+
+    background-color: grey;
+  `,
 }

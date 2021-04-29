@@ -1,18 +1,15 @@
 import { css } from '@emotion/native'
 
 export const styles = {
-  container: {
-    base: css`
-      padding: 10px;
-      padding-left: 0;
+  container: css`
+    padding: 10px;
+    padding-left: 0;
 
-      flex-direction: row;
-      align-items: flex-start;
+    flex-direction: row;
+    align-items: flex-start;
 
-      border-bottom-width: 1px;
-      border-bottom-color: grey;
-    `,
-  },
+    background-color: white;
+  `,
 
   imageContainer: css`
     width: 80px;

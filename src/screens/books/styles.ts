@@ -1,13 +1,15 @@
 import { css } from '@emotion/native'
 
 export const styles = {
-  container: css`
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-  `,
+  booksListHeader: css`
+    width: 100%;
+    height: 40px;
+    padding: 10px;
 
-  noBorder: css`
-    border-bottom-width: 0;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: flex-end;
+    align-items: center;
   `,
 }

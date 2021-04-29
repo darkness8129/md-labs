@@ -5,10 +5,7 @@ export const styles = {
     flex: 1;
     align-items: center;
     justify-content: center;
-  `,
 
-  diagram: css`
-    width: 300px;
-    height: 300px;
+    background-color: white;
   `,
 }

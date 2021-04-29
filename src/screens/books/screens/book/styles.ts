@@ -5,6 +5,10 @@ export const styles = {
     padding: 20px 10px;
   `,
 
+  scrollView: css`
+    background-color: white;
+  `,
+
   imageContainer: css`
     margin-bottom: 10px;
 

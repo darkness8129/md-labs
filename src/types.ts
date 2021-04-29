@@ -34,11 +34,12 @@ export type DrawingTabsList = {
 }
 
 export type BooksStackList = {
-  BooksListScreen: undefined
-  BookScreen: { book: BookInterface }
+  BooksListScreen: { newBook: BookInterface; book?: BookInterface } | undefined
+  BookScreen: { book: BookInterface; newBook?: BookInterface } | undefined
+  AddBookScreen: undefined
 }
 
-export type BookScreenNavigationProps<RouteName extends keyof BooksStackList> = {
+export type BooksScreenNavigationProps<RouteName extends keyof BooksStackList> = {
   navigation: CompositeNavigationProp<
     StackNavigationProp<BooksStackList, RouteName>,
     BottomTabNavigationProp<RootTabsList>
