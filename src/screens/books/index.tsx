@@ -1,44 +1,30 @@
 import { createStackNavigator } from '@react-navigation/stack'
-import { View } from 'react-native'
-import Icon from 'react-native-vector-icons/FontAwesome'
 import React, { FC } from 'react'
 
 import { BooksStackList, BooksScreenNavigationProps } from '~/types'
+import { Header } from '~/components'
 
 import { BooksListScreen, BookScreen, AddBookScreen } from './screens'
-import { styles } from './styles'
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
-import { useNavigation } from '@react-navigation/core'
 
 const BooksStack = createStackNavigator<BooksStackList>()
 
-const BooksListHeader: FC = () => {
-  const navigation = useNavigation()
-
-  return (
-    <TouchableWithoutFeedback onPress={() => navigation.navigate('AddBookScreen')}>
-      <View style={styles.booksListHeader}>
-        <Icon name="plus" size={24} color="black" />
-      </View>
-    </TouchableWithoutFeedback>
-  )
-}
-
 interface BooksScreenProps
-  extends BooksScreenNavigationProps<
-    'BooksListScreen' | 'BookScreen' | 'AddBookScreen'
-  > {}
+  extends BooksScreenNavigationProps<'BooksList' | 'Book' | 'AddBook'> {}
 
-export const BooksScreen: FC<BooksScreenProps> = () => {
+export const BooksScreen: FC<BooksScreenProps> = ({ navigation }) => {
   return (
     <BooksStack.Navigator>
       <BooksStack.Screen
-        name="BooksListScreen"
+        name="BooksList"
         component={BooksListScreen}
-        options={{ headerTitle: () => <BooksListHeader /> }}
+        options={{
+          headerTitle: () => (
+            <Header onAddButtonClick={() => navigation.navigate('AddBook')} />
+          ),
+        }}
       />
-      <BooksStack.Screen name="BookScreen" component={BookScreen} />
-      <BooksStack.Screen name="AddBookScreen" component={AddBookScreen} />
+      <BooksStack.Screen name="Book" component={BookScreen} />
+      <BooksStack.Screen name="AddBook" component={AddBookScreen} />
     </BooksStack.Navigator>
   )
 }

@@ -21,9 +21,7 @@ import { transformBooks } from './utils'
 import { styles } from './styles'
 
 interface BooksListScreenProps
-  extends BooksScreenNavigationProps<
-    'BooksListScreen' | 'BookScreen' | 'AddBookScreen'
-  > {}
+  extends BooksScreenNavigationProps<'BooksList' | 'Book' | 'AddBook'> {}
 
 export const BooksListScreen: FC<BooksListScreenProps> = ({ navigation, route }) => {
   const [filteredBooks, setFilteredBooks] = useState<BookInterface[]>(
@@ -82,7 +80,7 @@ export const BooksListScreen: FC<BooksListScreenProps> = ({ navigation, route })
     )[0]
 
     if (selectedBook)
-      navigation.navigate('BookScreen', { book: { ...selectedBook, image: book.image } })
+      navigation.navigate('Book', { book: { ...selectedBook, image: book.image } })
   }
 
   return (

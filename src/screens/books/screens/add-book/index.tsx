@@ -7,9 +7,7 @@ import { BookInterface, BooksScreenNavigationProps } from '~/types'
 import { styles } from './styles'
 
 interface AddBookScreenProps
-  extends BooksScreenNavigationProps<
-    'BooksListScreen' | 'BookScreen' | 'AddBookScreen'
-  > {}
+  extends BooksScreenNavigationProps<'BooksList' | 'Book' | 'AddBook'> {}
 
 export const AddBookScreen: FC<AddBookScreenProps> = ({ navigation }) => {
   const [book, setBook] = useState<BookInterface>({
@@ -38,7 +36,7 @@ export const AddBookScreen: FC<AddBookScreenProps> = ({ navigation }) => {
 
     // if no errors - add new book
     if (!errors.length) {
-      navigation.navigate('BooksListScreen', {
+      navigation.navigate('BooksList', {
         newBook: { ...book, price: book.price + '$' },
       })
     }

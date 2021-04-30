@@ -26,17 +26,18 @@ export type RootTabsList = {
   General: undefined
   Drawing: undefined
   Books: undefined
+  Images: undefined
 }
 
 export type DrawingTabsList = {
-  ChartScreen: undefined
-  DiagramScreen: undefined
+  Chart: undefined
+  Diagram: undefined
 }
 
 export type BooksStackList = {
-  BooksListScreen: { newBook: BookInterface; book?: BookInterface } | undefined
-  BookScreen: { book: BookInterface; newBook?: BookInterface } | undefined
-  AddBookScreen: undefined
+  BooksList: { newBook: BookInterface; book?: BookInterface } | undefined
+  Book: { book: BookInterface; newBook?: BookInterface } | undefined
+  AddBook: undefined
 }
 
 export type BooksScreenNavigationProps<RouteName extends keyof BooksStackList> = {

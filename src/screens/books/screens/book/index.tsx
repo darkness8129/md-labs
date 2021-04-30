@@ -8,9 +8,7 @@ import { BooksScreenNavigationProps } from '~/types'
 import { styles } from './styles'
 
 interface BookScreenProps
-  extends BooksScreenNavigationProps<
-    'BooksListScreen' | 'BookScreen' | 'AddBookScreen'
-  > {}
+  extends BooksScreenNavigationProps<'BooksList' | 'Book' | 'AddBook'> {}
 
 export const BookScreen: FC<BookScreenProps> = ({ route }) => {
   const book = route.params?.book

@@ -10,8 +10,8 @@ const DrawingTabs = createBottomTabNavigator<DrawingTabsList>()
 export const DrawingScreen: FC = () => {
   return (
     <DrawingTabs.Navigator screenOptions={{ tabBarVisible: false }}>
-      <DrawingTabs.Screen name="ChartScreen" component={ChartScreen} />
-      <DrawingTabs.Screen name="DiagramScreen" component={DiagramScreen} />
+      <DrawingTabs.Screen name="Chart" component={ChartScreen} />
+      <DrawingTabs.Screen name="Diagram" component={DiagramScreen} />
     </DrawingTabs.Navigator>
   )
 }

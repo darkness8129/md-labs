@@ -5,7 +5,7 @@ import { enableScreens } from 'react-native-screens'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-import { GeneralScreen, DrawingScreen, BooksScreen } from './screens'
+import { GeneralScreen, DrawingScreen, BooksScreen, ImagesScreen } from './screens'
 import { RootTabsList } from './types'
 
 const RootTabs = createBottomTabNavigator<RootTabsList>()
@@ -23,6 +23,7 @@ export const App = () => {
 
               if (route.name === 'Drawing') iconName = 'pencil'
               else if (route.name === 'Books') iconName = 'book'
+              else if (route.name === 'Images') iconName = 'image'
 
               return <Icon name={iconName} size={size} color={color} />
             },
@@ -35,6 +36,7 @@ export const App = () => {
           <RootTabs.Screen name="General" component={GeneralScreen} />
           <RootTabs.Screen name="Drawing" component={DrawingScreen} />
           <RootTabs.Screen name="Books" component={BooksScreen} />
+          <RootTabs.Screen name="Images" component={ImagesScreen} />
         </RootTabs.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
