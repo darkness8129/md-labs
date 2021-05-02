@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/core'
 import React, { FC } from 'react'
 import { Text, View, TouchableHighlight } from 'react-native'
 import AutoHeightImage from 'react-native-auto-height-image'
@@ -11,22 +12,27 @@ interface BookProps {
   book: BookInterface
 
   searchValue: string
-
-  showFullInfoAboutBook: () => any
 }
 
 export const Book: FC<BookProps> = ({
   book,
 
   searchValue,
-
-  showFullInfoAboutBook,
 }) => {
+  const navigation = useNavigation()
+
   return (
-    <TouchableHighlight onPress={showFullInfoAboutBook} underlayColor="lightgrey">
+    <TouchableHighlight
+      onPress={() => {
+        // if book not new - show all info about book
+        if (!book.isbn13.includes('newBook'))
+          navigation.navigate('Book', { bookId: book.isbn13 })
+      }}
+      underlayColor="lightgrey"
+    >
       <View style={styles.container}>
         <View style={styles.imageContainer}>
-          {!!book.image && <AutoHeightImage source={book.image} width={80} />}
+          {!!book.image && <AutoHeightImage source={{ uri: book.image }} width={80} />}
         </View>
 
         <View style={styles.text.container}>

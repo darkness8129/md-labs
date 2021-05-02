@@ -31,4 +31,20 @@ export const styles = {
       margin-bottom: 20px;
     `,
   },
+
+  error: css`
+    margin-top: 20px;
+    text-align: center;
+
+    color: red;
+    font-size: 16px;
+  `,
+
+  refresh: css`
+    text-align: center;
+
+    text-decoration: underline;
+    color: blue;
+    font-size: 16px;
+  `,
 }

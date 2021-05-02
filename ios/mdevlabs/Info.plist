@@ -57,5 +57,10 @@
 	<false/>
   <key>NSPhotoLibraryUsageDescription</key>
   <string>Photo Library Access Warning</string>
+  <key>NSAppTransportSecurity</key>
+  <dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+  </dict>
 </dict>
 </plist>

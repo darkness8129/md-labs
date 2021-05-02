@@ -1,86 +1,64 @@
 import React, { FC, useEffect, useState } from 'react'
-import { View, TextInput, Text } from 'react-native'
+import { View, TextInput, Text, ActivityIndicator } from 'react-native'
 import { FlatList, Swipeable, TouchableOpacity } from 'react-native-gesture-handler'
 
 import { BookInterface, BooksScreenNavigationProps } from '~/types'
-// RN do not have dynamic imports :(
-import * as book1 from '~/screens/books/assets/files/9780321856715.json'
-import * as book2 from '~/screens/books/assets/files/9780321862969.json'
-import * as book3 from '~/screens/books/assets/files/9781118841471.json'
-import * as book4 from '~/screens/books/assets/files/9781430236054.json'
-import * as book5 from '~/screens/books/assets/files/9781430237105.json'
-import * as book6 from '~/screens/books/assets/files/9781430238072.json'
-import * as book7 from '~/screens/books/assets/files/9781430245124.json'
-import * as book8 from '~/screens/books/assets/files/9781430260226.json'
-import * as book9 from '~/screens/books/assets/files/9781449308360.json'
-import * as book10 from '~/screens/books/assets/files/9781449342753.json'
 
-import BooksList from '../../assets/files/BooksList.json'
 import { Book } from './components'
-import { transformBooks } from './utils'
 import { styles } from './styles'
+
+interface Query {
+  search: string
+}
 
 interface BooksListScreenProps
   extends BooksScreenNavigationProps<'BooksList' | 'Book' | 'AddBook'> {}
 
-export const BooksListScreen: FC<BooksListScreenProps> = ({ navigation, route }) => {
-  const [filteredBooks, setFilteredBooks] = useState<BookInterface[]>(
-    transformBooks(BooksList.books),
-  )
-  const [allBooks, setAllBooks] = useState<BookInterface[]>(
-    transformBooks(BooksList.books),
-  )
-  const [extendedBooks, setExtendedBooks] = useState<BookInterface[]>([
-    book1,
-    book2,
-    book3,
-    book4,
-    book5,
-    book6,
-    book7,
-    book8,
-    book9,
-    book10,
-  ])
-  const [searchValue, setSearchValue] = useState<string>('')
+export const BooksListScreen: FC<BooksListScreenProps> = ({ route }) => {
+  const [books, setBooks] = useState<BookInterface[]>([])
+  const [error, setError] = useState<string>('')
+  const [loading, setLoading] = useState<boolean>(false)
+  const [query, setQuery] = useState<Query>({ search: '' })
+
+  useEffect(() => {
+    const getBooks = async () => {
+      setLoading(true)
+      setError('')
+
+      try {
+        // get books
+        const response = await fetch(
+          `https://api.itbook.store/1.0/search/${query.search}`,
+        )
+        const data: { books: BookInterface[] } = await response.json()
+
+        setBooks(data.books)
+      } catch (err) {
+        setError(`Error: ${err.message}`)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    // get books only when search length greater than 3
+    if (query.search.length >= 3) {
+      getBooks()
+    } else {
+      setBooks([])
+    }
+  }, [query])
 
   // add new book
   useEffect(() => {
     const newBook: BookInterface | undefined = route.params?.newBook
 
-    if (newBook) {
-      setFilteredBooks((prev) => [...prev, newBook])
-      setAllBooks((prev) => [...prev, newBook])
-      setExtendedBooks((prev) => [...prev, newBook])
-    }
+    // if have new book in params - add new book
+    if (newBook) setBooks((prev) => [...prev, newBook])
   }, [route.params?.newBook])
-
-  const onSearch = (value: string): void => {
-    setSearchValue(value)
-
-    // filter books
-    setFilteredBooks(
-      allBooks.filter(
-        (book) => book.title.toLowerCase().indexOf(value.toLocaleLowerCase()) !== -1,
-      ),
-    )
-  }
 
   // delete book
   const onDelete = (id: string): void => {
-    setAllBooks((prev) => [...prev].filter((book) => book.isbn13 !== id))
-    setFilteredBooks((prev) => [...prev].filter((book) => book.isbn13 !== id))
-  }
-
-  // show full info about book
-  const showFullInfoAboutBook = (book: BookInterface): void => {
-    // get selected book from array of extended books
-    const selectedBook: BookInterface = extendedBooks.filter(
-      (b) => b.isbn13 === book.isbn13,
-    )[0]
-
-    if (selectedBook)
-      navigation.navigate('Book', { book: { ...selectedBook, image: book.image } })
+    setBooks((prev) => [...prev].filter((book) => book.isbn13 !== id))
   }
 
   return (
@@ -88,20 +66,34 @@ export const BooksListScreen: FC<BooksListScreenProps> = ({ navigation, route })
       <View style={styles.input.container}>
         <TextInput
           style={styles.input.input}
-          onChangeText={(value) => onSearch(value)}
-          value={searchValue}
+          onChangeText={(value) => setQuery({ search: value })}
+          value={query.search}
           placeholder="Search..."
         />
       </View>
 
-      {filteredBooks.length === 0 ? (
-        <View style={styles.noBooks.container}>
-          <Text style={styles.noBooks.text}>No books matching your search...</Text>
+      {books.length === 0 && !loading && !error && (
+        <Text style={styles.text.noBooks}>No books found...</Text>
+      )}
+
+      {!!error && (
+        <View>
+          <Text style={styles.text.error}>{error}</Text>
+          <TouchableOpacity
+            activeOpacity={0.6}
+            onPress={() => setQuery((prev) => ({ ...prev }))}
+          >
+            <Text style={styles.refresh}>Refresh</Text>
+          </TouchableOpacity>
         </View>
-      ) : (
+      )}
+
+      {loading && <ActivityIndicator />}
+
+      {books.length > 0 && (
         <FlatList
           style={styles.booksList}
-          data={filteredBooks}
+          data={books}
           keyExtractor={(item) => item.isbn13}
           renderItem={({ item }) => {
             return (
@@ -117,12 +109,7 @@ export const BooksListScreen: FC<BooksListScreenProps> = ({ navigation, route })
                   </TouchableOpacity>
                 )}
               >
-                <Book
-                  book={item}
-                  key={item.isbn13}
-                  searchValue={searchValue}
-                  showFullInfoAboutBook={() => showFullInfoAboutBook(item)}
-                />
+                <Book book={item} key={item.isbn13} searchValue={query.search} />
               </Swipeable>
             )
           }}

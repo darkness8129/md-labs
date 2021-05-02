@@ -19,6 +19,7 @@ export interface BookInterface {
   year?: string
   rating?: string
   desc?: string
+  url?: string
 }
 
 // ------- NAVIGATION ---------
@@ -35,8 +36,8 @@ export type DrawingTabsList = {
 }
 
 export type BooksStackList = {
-  BooksList: { newBook: BookInterface; book?: BookInterface } | undefined
-  Book: { book: BookInterface; newBook?: BookInterface } | undefined
+  BooksList: { newBook: BookInterface; bookId?: string } | undefined
+  Book: { bookId: string; newBook?: BookInterface } | undefined
   AddBook: undefined
 }
 

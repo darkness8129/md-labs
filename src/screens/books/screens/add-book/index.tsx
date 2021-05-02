@@ -15,7 +15,7 @@ export const AddBookScreen: FC<AddBookScreenProps> = ({ navigation }) => {
     subtitle: '',
     price: '',
     image: '',
-    isbn13: new Date().toString(),
+    isbn13: `newBook_${new Date().toString()}`,
   })
   const [errors, setErrors] = useState<string[]>([])
 

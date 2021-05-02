@@ -2,13 +2,12 @@ import { css } from '@emotion/native'
 
 export const styles = {
   container: css`
+    flex: 1;
+
     background-color: white;
-    padding-bottom: 80px;
   `,
 
   booksList: css`
-    height: 100%;
-
     background-color: white;
   `,
 
@@ -67,5 +66,30 @@ export const styles = {
     height: 1px;
 
     background-color: grey;
+  `,
+
+  text: {
+    noBooks: css`
+      text-align: center;
+
+      color: black;
+      opacity: 0.6;
+      font-size: 16px;
+    `,
+
+    error: css`
+      text-align: center;
+
+      color: red;
+      font-size: 16px;
+    `,
+  },
+
+  refresh: css`
+    text-align: center;
+
+    text-decoration: underline;
+    color: blue;
+    font-size: 16px;
   `,
 }
