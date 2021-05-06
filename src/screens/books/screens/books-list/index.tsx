@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from 'react'
 import { View, TextInput, Text, ActivityIndicator } from 'react-native'
 import { FlatList, Swipeable, TouchableOpacity } from 'react-native-gesture-handler'
 
-import { BookInterface, BooksScreenNavigationProps } from '~/types'
+import { BookInterface, BooksScreenNavigationProps, GettingData } from '~/types'
 
 import { Book } from './components'
 import { styles } from './styles'
@@ -16,27 +16,31 @@ interface BooksListScreenProps
 
 export const BooksListScreen: FC<BooksListScreenProps> = ({ route }) => {
   const [books, setBooks] = useState<BookInterface[]>([])
-  const [error, setError] = useState<string>('')
-  const [loading, setLoading] = useState<boolean>(false)
+  const [gettingBooks, setGettingBooks] = useState<GettingData>({
+    error: '',
+    loading: false,
+  })
   const [query, setQuery] = useState<Query>({ search: '' })
 
   useEffect(() => {
     const getBooks = async () => {
-      setLoading(true)
-      setError('')
+      setGettingBooks({ loading: true, error: '' })
 
       try {
         // get books
         const response = await fetch(
-          `https://api.itbook.store/1.0/search/${query.search}`,
+          // encodeURIComponent need here to replacing
+          // each defined character sequence with one, two, three, or four character sequences
+          // it works for all symbols exclude latin letters, decimal digits, - _. ! ~ * '()
+          `https://api.itbook.store/1.0/search/${encodeURIComponent(query.search)}`,
         )
         const data: { books: BookInterface[] } = await response.json()
 
         setBooks(data.books)
       } catch (err) {
-        setError(`Error: ${err.message}`)
+        setGettingBooks((prev) => ({ ...prev, error: `Error: ${err.message}` }))
       } finally {
-        setLoading(false)
+        setGettingBooks((prev) => ({ ...prev, loading: false }))
       }
     }
 
@@ -72,13 +76,13 @@ export const BooksListScreen: FC<BooksListScreenProps> = ({ route }) => {
         />
       </View>
 
-      {books.length === 0 && !loading && !error && (
+      {books.length === 0 && !gettingBooks.loading && !gettingBooks.error && (
         <Text style={styles.text.noBooks}>No books found...</Text>
       )}
 
-      {!!error && (
+      {!!gettingBooks.error && (
         <View>
-          <Text style={styles.text.error}>{error}</Text>
+          <Text style={styles.text.error}>{gettingBooks.error}</Text>
           <TouchableOpacity
             activeOpacity={0.6}
             onPress={() => setQuery((prev) => ({ ...prev }))}
@@ -88,7 +92,7 @@ export const BooksListScreen: FC<BooksListScreenProps> = ({ route }) => {
         </View>
       )}
 
-      {loading && <ActivityIndicator />}
+      {gettingBooks.loading && <ActivityIndicator />}
 
       {books.length > 0 && (
         <FlatList

@@ -4,6 +4,8 @@ export const styles = {
   container: (size: number) => css`
     width: ${size + 'px'};
     height: ${size + 'px'};
+    position: relative;
+    z-index: 2;
 
     justify-content: center;
     align-items: center;
@@ -18,4 +20,9 @@ export const styles = {
     maxWidth: h,
     height: h - 2, // -2  - because 2px for borders
   }),
+
+  loader: css`
+    position: absolute;
+    z-index: 3;
+  `,
 }

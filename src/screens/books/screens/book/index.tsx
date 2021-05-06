@@ -3,7 +3,7 @@ import { ActivityIndicator, Text, View } from 'react-native'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 import AutoHeightImage from 'react-native-auto-height-image'
 
-import { BookInterface, BooksScreenNavigationProps } from '~/types'
+import { BookInterface, BooksScreenNavigationProps, GettingData } from '~/types'
 
 import { styles } from './styles'
 
@@ -12,14 +12,15 @@ interface BookScreenProps
 
 export const BookScreen: FC<BookScreenProps> = ({ route }) => {
   const [book, setBook] = useState<BookInterface | undefined>(undefined)
-  const [refresh, setRefresh] = useState<boolean>(true)
-  const [error, setError] = useState<string>('')
-  const [loading, setLoading] = useState<boolean>(false)
+  const [gettingBook, setGettingBook] = useState<GettingData>({
+    loading: true,
+    error: '',
+    refresh: true,
+  })
 
   useEffect(() => {
     const getBook = async () => {
-      setLoading(true)
-      setError('')
+      setGettingBook((prev) => ({ ...prev, loading: true, error: '' }))
 
       try {
         // get book
@@ -30,29 +31,40 @@ export const BookScreen: FC<BookScreenProps> = ({ route }) => {
 
         setBook(book)
       } catch (err) {
-        setError(`Error: ${err.message}`)
+        setGettingBook((prev) => ({ ...prev, error: `Error: ${err.message}` }))
       } finally {
-        setLoading(false)
-        setRefresh(false)
+        setGettingBook((prev) => ({
+          ...prev,
+          loading: false,
+          refresh: false,
+        }))
       }
     }
 
     // get book only when refresh(first rendering -  refresh seted to true)
-    if (refresh) getBook()
-  }, [refresh, route.params?.bookId])
+    if (gettingBook.refresh) getBook()
+  }, [gettingBook.refresh, route.params?.bookId])
 
   return (
     <ScrollView style={styles.scrollView}>
-      {!!error && (
+      {!!gettingBook.error && (
         <View>
-          <Text style={styles.error}>{error}</Text>
-          <TouchableOpacity activeOpacity={0.6} onPress={() => setRefresh(true)}>
+          <Text style={styles.error}>{gettingBook.error}</Text>
+          <TouchableOpacity
+            activeOpacity={0.6}
+            onPress={() =>
+              setGettingBook((prev) => ({
+                ...prev,
+                refresh: true,
+              }))
+            }
+          >
             <Text style={styles.refresh}>Refresh</Text>
           </TouchableOpacity>
         </View>
       )}
 
-      {loading && <ActivityIndicator />}
+      {gettingBook.loading && <ActivityIndicator />}
 
       {book && (
         <View style={styles.container}>

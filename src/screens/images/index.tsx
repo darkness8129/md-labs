@@ -1,32 +1,70 @@
-import React, { FC, useState } from 'react'
-import { View, Dimensions, Alert } from 'react-native'
+import React, { FC, useEffect, useState } from 'react'
+import {
+  View,
+  Dimensions,
+  Alert,
+  ActivityIndicator,
+  TouchableOpacity,
+  Text,
+} from 'react-native'
 import { getStatusBarHeight } from 'react-native-status-bar-height'
-import ImagePicker, { Image as ImageType } from 'react-native-image-crop-picker'
+import ImagePicker from 'react-native-image-crop-picker'
 import { ScrollView } from 'react-native-gesture-handler'
 
 import { Header } from '~/components'
 import { useOrientation } from '~/hooks'
-import { Orientation } from '~/types'
+import { ServerImage, Orientation, GettingData, Images } from '~/types'
 
 import { styles } from './styles'
 import { ImageComponent } from './components'
-
-interface Images {
-  left: ImageType[]
-  center: ImageType[]
-  right: ImageType[]
-  column: 'left' | 'center' | 'right'
-}
+import { addImage } from './utils'
+import { INITIAL_IMAGES } from './constatns'
 
 export const ImagesScreen: FC = () => {
-  const [images, setImages] = useState<Images>({
-    left: [],
-    center: [],
-    right: [],
-    column: 'right',
+  const [images, setImages] = useState<Images>(INITIAL_IMAGES)
+  const [gettingServerImages, setGettingServerImages] = useState<GettingData>({
+    error: '',
+    loading: true,
+    refresh: true,
   })
 
   const orientation = useOrientation()
+
+  useEffect(() => {
+    const getServerImages = async () => {
+      setGettingServerImages((prev) => ({ ...prev, loading: true, error: '' }))
+
+      try {
+        // get images
+        const response = await fetch(
+          `https://pixabay.com/api/?key=19193969-87191e5db266905fe8936d565&q=red+cars&image_type=photo&per_page=21`,
+        )
+        const data: { hits: ServerImage[] } = await response.json()
+
+        // variable with initial images
+        let serverImages: Images = INITIAL_IMAGES
+
+        // add all images to serverImages variable
+        for (let i = 0; i < data.hits.length; i++) {
+          serverImages = addImage(serverImages, data.hits[i]) as Images
+        }
+
+        // add images to state
+        setImages(serverImages)
+      } catch (err) {
+        setGettingServerImages((prev) => ({ ...prev, error: `Error: ${err.message}` }))
+      } finally {
+        setGettingServerImages((prev) => ({
+          ...prev,
+          loading: false,
+          refresh: false,
+        }))
+      }
+    }
+
+    // get images only when refresh(first rendering -  refresh seted to true)
+    if (gettingServerImages.refresh) getServerImages()
+  }, [gettingServerImages.refresh])
 
   // add image
   const pickImage = async () => {
@@ -35,29 +73,12 @@ export const ImagesScreen: FC = () => {
       includeBase64: true,
     })
       .then((image) => {
-        // set images
-        setImages((prev) => {
-          // when prev column 'right' - next will be 'left'
-          if (prev.column === 'right') {
-            return { ...prev, column: 'left', left: [...prev.left, image] }
-          } else if (
-            // when prev column 'left' and prev image small
-            // or prev column 'center' - next will be right
-            (prev.column === 'left' &&
-              (prev.left.length + prev.center.length + prev.right.length + 1) % 7 !==
-                2) ||
-            prev.column === 'center'
-          ) {
-            return { ...prev, column: 'right', right: [...prev.right, image] }
-          }
-
-          // when prev column 'left' and prev image small
-          return { ...prev, column: 'center', center: [...prev.center, image] }
-        })
+        // add image to state
+        setImages((prev) => addImage(prev, image) as Images)
       })
       .catch(() => {
         // show error alert
-        Alert.alert('Error', 'Failed to add image', [
+        Alert.alert('Info', 'Image not added', [
           {
             text: 'Ok',
           },
@@ -79,25 +100,49 @@ export const ImagesScreen: FC = () => {
           )}
         />
 
-        <View style={styles.images}>
+        {!!gettingServerImages.error && (
           <View>
-            {images.left.map((image, index) => (
-              <ImageComponent image={image} key={index} size={smallSize} />
-            ))}
+            <Text style={styles.error}>{gettingServerImages.error}</Text>
+            <TouchableOpacity
+              activeOpacity={0.6}
+              onPress={() =>
+                setGettingServerImages((prev) => ({
+                  ...prev,
+                  refresh: true,
+                }))
+              }
+            >
+              <Text style={styles.refresh}>Refresh</Text>
+            </TouchableOpacity>
           </View>
+        )}
 
-          <View>
-            {images.center.map((image, index) => (
-              <ImageComponent image={image} key={index} size={bigSize} />
-            ))}
-          </View>
+        {gettingServerImages.loading && <ActivityIndicator />}
 
-          <View>
-            {images.right.map((image, index) => (
-              <ImageComponent image={image} key={index} size={smallSize} />
-            ))}
-          </View>
-        </View>
+        {images.left.length > 0 &&
+          images.center.length > 0 &&
+          images.right.length > 0 &&
+          !gettingServerImages.loading && (
+            <View style={styles.images}>
+              <View>
+                {images.left.map((image, index) => (
+                  <ImageComponent image={image} key={index} size={smallSize} />
+                ))}
+              </View>
+
+              <View>
+                {images.center.map((image, index) => (
+                  <ImageComponent image={image} key={index} size={bigSize} />
+                ))}
+              </View>
+
+              <View>
+                {images.right.map((image, index) => (
+                  <ImageComponent image={image} key={index} size={smallSize} />
+                ))}
+              </View>
+            </View>
+          )}
       </View>
     </ScrollView>
   )
